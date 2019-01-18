@@ -2,10 +2,9 @@ const mongoose = require("mongoose");
 
 const Entry = mongoose.model("entrys");
 
-module.exports = app =>{
-
+module.exports = app => {
   app.post("/api/entry", async (req, res) => {
-    const{ body, highScore, lowScore } = req.body;
+    const { body, highScore, lowScore } = req.body;
     const entry = new Entry({
       body,
       highScore,
@@ -13,14 +12,12 @@ module.exports = app =>{
     });
 
     await entry.save();
-    const allEntrys = await Entry.find()
-    res.send(allEntrys)
-
+    const allEntrys = await Entry.find();
+    res.send(allEntrys);
   });
 
-  app.get("/api/allentrys", async (req, res) =>{
-    const allEntrys = await Entry.find()
-    res.send(allEntrys)
-  })
-
-}
+  app.get("/api/allentrys", async (req, res) => {
+    const allEntrys = await Entry.find();
+    res.send(allEntrys);
+  });
+};
