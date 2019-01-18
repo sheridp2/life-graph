@@ -1,0 +1,29 @@
+{
+  "name": "life-graph",
+  "version": "1.0.0",
+  "description": "An app to journal your daily life, give it a score, and see if there is long term improvement. React, Redux, D3",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheridp2/life-graph.git"
+  },
+  "author": "Patrick Sheridan",
+  "license": "MIT",
+  "homepage": "https://github.com/sheridp2/life-graph#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.4",
+    "nodemon": "^1.18.9",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0"
+  }
+}
