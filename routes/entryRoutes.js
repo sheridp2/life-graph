@@ -18,4 +18,9 @@ module.exports = app =>{
 
   });
 
+  app.get("/api/allentrys", async (req, res) =>{
+    const allEntrys = await Entry.find()
+    res.send(allEntrys)
+  })
+
 }
