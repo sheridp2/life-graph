@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "An app to journal your daily life, give it a score, and see if there is long term improvement. React, Redux, D3",
   "main": "index.js",
+  "engines": {
+    "node:": "8.1.1",
+    "npm": "5.0.3"
+  },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
