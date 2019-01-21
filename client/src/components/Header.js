@@ -10,7 +10,7 @@ class Header extends Component {
       case false:
         return (
           <div>
-            <a class="waves-effect blue btn" href="/auth/google">Login With Google
+            <a className="waves-effect blue btn" href="/auth/google">Login With Google
               <i className="material-icons right">send</i>
             </a>
           </div>
