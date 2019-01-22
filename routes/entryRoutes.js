@@ -15,7 +15,8 @@ module.exports = app => {
     const entry = new Entry({
       body,
       highScore,
-      lowScore
+      lowScore,
+      _user: req.user.id,
     });
 
     await entry.save();

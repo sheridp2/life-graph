@@ -9,7 +9,7 @@ const Dashboard = () => {
       <Graph />
       <div style ={{paddingTop:'10px' }}>
         <Link to="/entrys/new">
-          <div className="waves-effect red btn"><i className="material-icons right">add</i>New Survey</div>
+          <div className="waves-effect #558b2f light-green darken-3 btn"><i className="material-icons right">add</i>New Entry</div>
         </Link>
       </div>
     </div>
