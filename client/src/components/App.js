@@ -5,11 +5,10 @@ import * as actions from "../actions";
 
 import Header from "./Header";
 import Dashboard from "./Dashboard";
-import EntrysNew from './entrys/EntrysNew'
-import Landing from './Landing'
+import Landing from "./Landing";
+import EntryNew from './entrys/EntryNew';
 
 class App extends Component {
-
   componentDidMount() {
     this.props.fetchUser();
   }
@@ -21,7 +20,7 @@ class App extends Component {
           <Header />
           <Route exact path="/" component={Landing} />
           <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/entrys/new" component={EntrysNew} />
+          <Route exact path="/entrys/new" component={EntryNew} />
         </div>
       </BrowserRouter>
     );
