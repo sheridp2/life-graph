@@ -5,25 +5,19 @@ import { Link } from "react-router-dom";
 import EntryField from "./EntryField";
 import formFields from "./formFields";
 
-
 class EntryForm extends Component {
   renderFields() {
-    return _.map(formFields, ({ label, name, noValueError }) => {
-
+    return _.map(formFields, ({ label, name, noValueError, type }) => {
       return (
         <Field
           key={name}
           component={EntryField}
-          type="text"
           label={label}
+          type={type}
           name={name}
         />
       );
     });
-  }
-  handleSubmit(){
-
-
   }
 
   render() {
@@ -34,13 +28,10 @@ class EntryForm extends Component {
           <Link to="/dashboard" className="red btn-flat white-text">
             Cancel
           </Link>
-          <button
-
-        className="green white-text btn-flat right"
-      >
-        Submit Entry
-        <i className="material-icons right">email</i>
-      </button>
+          <button className="green white-text btn-flat right">
+            Submit Entry
+            <i className="material-icons right">email</i>
+          </button>
         </form>
       </div>
     );
@@ -49,9 +40,17 @@ class EntryForm extends Component {
 function validate(values) {
   const errors = {};
 
-  _.each(formFields, ({ name, noValueError }) => {
+  _.each(formFields, ({ name, type, noValueError }) => {
     if (!values[name]) {
       errors[name] = noValueError;
+    }
+    if (values.lowScore < 0 || values.lowScore > 100 || isNaN(values.lowScore)) {
+
+      errors.lowScore = 'Enter value between 0 and high score';
+
+    }
+    if (values.highScore > 100 || isNaN(values.highScore)) {
+      errors.highScore = 'Enter value between low score and 100'
     }
   });
 

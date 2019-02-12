@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ input, label, meta: { error, touched, active } }) => {
+export default ({ input, label, type,  meta: { error, touched, active } }) => {
 
   return(
     <div>
